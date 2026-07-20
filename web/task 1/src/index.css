@@ -1,0 +1,64 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-white text-navy dark:bg-navy dark:text-slate-lightest font-sans antialiased transition-colors duration-300;
+}
+
+::selection {
+  @apply bg-teal/20 text-navy dark:text-white;
+}
+
+/* Slim, unobtrusive scrollbar that matches the accent palette */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-slate-dark/50 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-teal/60;
+}
+
+@layer components {
+  .container-base {
+    @apply mx-auto w-full max-w-6xl px-6 sm:px-8 lg:px-12;
+  }
+
+  .section-padding {
+    @apply py-20 sm:py-28;
+  }
+
+  .link-underline {
+    @apply relative after:absolute after:left-0 after:-bottom-1 after:h-px after:w-0 after:bg-teal after:transition-all after:duration-300 hover:after:w-full;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center gap-2 rounded border border-teal px-6 py-3 font-mono text-sm text-teal transition-all duration-300 hover:-translate-y-0.5 hover:bg-teal/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal;
+  }
+
+  .numbered-heading {
+    @apply flex items-center gap-3 text-2xl sm:text-3xl font-semibold text-navy dark:text-slate-lightest whitespace-nowrap;
+  }
+
+  .numbered-heading::before {
+    counter-increment: section;
+    content: '0' counter(section) '.';
+    @apply font-mono text-lg sm:text-xl text-teal;
+  }
+}
+
+body {
+  counter-reset: section;
+}

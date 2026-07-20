@@ -24,3 +24,36 @@ A modern, responsive personal portfolio website built with React, Vite, and Tail
 - Fonts: Inter and Fira Code (Google Fonts)
 
 ## Project Structure
+
+The full project lives in [`task 1/`](./task%201), which contains its own
+detailed README with setup instructions, folder layout, and customization
+notes.
+
+```
+web/
+└── task 1/
+    ├── public/
+    ├── src/
+    │   ├── components/
+    │   ├── context/
+    │   ├── data/
+    │   ├── pages/
+    │   ├── App.jsx
+    │   ├── index.css
+    │   └── main.jsx
+    ├── index.html
+    ├── package.json
+    ├── tailwind.config.js
+    └── vite.config.js
+```
+
+## Getting Started
+
+```bash
+cd "web/task 1"
+npm install
+npm run dev
+```
+
+See [`task 1/README.md`](./task%201/README.md) for the full setup, build,
+and customization guide.
